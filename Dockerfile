@@ -5,6 +5,7 @@ RUN go mod download
 COPY *.go ./
 RUN go build -o app .
 
+
 FROM alpine:latest
 WORKDIR /app
 COPY --from=builder /app/app /app/app
